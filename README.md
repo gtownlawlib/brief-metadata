@@ -22,7 +22,7 @@ You also need to add the ID for your sheet to the appropriate line in gsheets.py
 The first time you run the application, you will be provided a URL to visit in your browser to grant the script access to your sheet. This will provide you an access token to paste in the command line prompt, which will create the access token the application will use from then on to log into your Google Sheet.
 
 The script expects a spreadsheet with the following columns (in this order):
-1. **pdf** (The source PDF number.)
+1. **pdf** (The source PDF number; see the Using the Application section below for more info about the PDF Number value)
 2. **docket** (The docket number of the case)
 3. **year** (The year the case was decided)
 4. **name** (The short version of the case name, as used in citations)
@@ -52,6 +52,6 @@ This optional argument specifies the jurisdiction/court of the case. For this to
 ### Running the Script
 `$ python3 brief-metadata.py 34 70-18 scotus`
 
-This command will retrieve metadata for Roe v. Wade. The metadata will be shown onscreen and you will be asked to confirm that's the case you wish to add. If you respond 'y,' a new row will be created in your Google Sheet for PDF #34 that includes the docket number (70-18), year of decision (1973), short case name (Roe v. Wade), and long case name (Roe et al. v. Wade, District Attorney of Dallas County.). _See the Google Sheets section below for more info about the expected columns in your Google Sheet._
+This command will retrieve metadata for Roe v. Wade. The metadata will be shown onscreen and you will be asked to confirm that's the case you wish to add. If you respond 'y,' a new row will be created in your Google Sheet for PDF #34 that includes the docket number (70-18), year of decision (1973), short case name (Roe v. Wade), and long case name (Roe et al. v. Wade, District Attorney of Dallas County.). _See the Google Sheets section above for more info about the expected columns in your Google Sheet._
 
 If you do not include a court code argument, the application will search all jurisdictions. If only one matching docket number is found, that case will be displayed and you'll be asked to confirm that it's the one you want to enter. If more than one match is found, a list of all matches will be displayed along with their court codes, and you'll be asked to run your command again with the court code corresponding to the case you want.
